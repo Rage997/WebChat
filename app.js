@@ -7,7 +7,7 @@ const  DBChat  = require("./models/ChatSchema");
 const  dbconnect  = require("./mongoConnect");
 const chatRoute  = require("./route/chatsRoute")
 
-const port = 500;
+const port = 3000;
 
 
 app.use(express.static(__dirname + "/public"));
@@ -39,7 +39,7 @@ socket.on("connection", (socket)=>{
 
     socket.on("stopTyping", () => { 
         console.log("Stop!")
-        socket.broadcast.emit("notifyStopTyping"); 
+        socket.broadcast.emit("stopTyping"); 
     });
 
 });

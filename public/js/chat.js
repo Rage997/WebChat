@@ -50,17 +50,20 @@ messageInput.addEventListener("keypress", () => {
     socket.emit('isTyping', {user: username})
 })
 
+let users_typing = new Set
 socket.on('isTyping', data => {
-    typing.innerHTML = "<p><em>" + data.user + " is typing</em></p>";
+    users_typing.add(data.user)
+    typing.innerHTML = "<p> <b>" + Array.from(users_typing).join(', ') + "</b> <em> is typing</em></p>";
     console.log(data.user + " is typing")
 })
 
 messageInput.addEventListener("keyup", () => {
     if (messageInput.value == ""){
-        socket.emit("stopTyping", "");
+        socket.emit("stopTyping", {user: username});
     }
 });
 
-socket.on("notifyStopTyping", () => {
-    typing.innerHTML = "";
+socket.on("stopTyping", (data) => {
+    users_typing.delete(data.user)
+    typing.innerHTML = "<p> <b>" + Array.from(users_typing).join(', ') + "</b> <em> is typing</em></p>";
 });
