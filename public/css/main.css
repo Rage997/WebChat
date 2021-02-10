@@ -6,3 +6,13 @@
     background-color: #579aff;
     font-family: "Calibri", "Roboto", sans-serif;
   }
+
+  .title {
+    background-color: white;
+    text-align: center
+  }
+
+  #username_input {
+    padding: 2%;
+    text-align: center;
+  }
