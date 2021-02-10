@@ -27,6 +27,7 @@ socket.on("received", (data)=>{
     messages.appendChild(li).append(data.msg);
     messages.appendChild(span).append("by " + data.user + ": " + "just now");
     console.log('Received message:' + data.msg + ' from ' + data.user)
+    messages.scrollTop = messages.scrollHeight;
 })
 
 // Get chat history
@@ -37,6 +38,7 @@ fetch("/chats").then( data => {
             let span = document.createElement("span");
             messages.appendChild(li).append(data.message);
             messages.appendChild(span).append("by " + data.sender + " at: " + data.createdAt);
+            messages.scrollTop = messages.scrollHeight;
         })
     })
 })
