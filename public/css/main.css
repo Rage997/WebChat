@@ -3,12 +3,14 @@
   }
   
   body {
-    background-color: #579aff;
+    background-color: rgb(92, 201, 235);
     font-family: "Calibri", "Roboto", sans-serif;
   }
 
   .title {
-    background-color: white;
+    background-color: rgb(67, 134, 221);
+    font-size: 20pt;
+    padding: 0.5%;
     text-align: center
   }
 

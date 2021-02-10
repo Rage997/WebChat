@@ -3,25 +3,31 @@
     <head>
         <title>WebChat</title>
         <link  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"  rel="stylesheet"  id="bootstrap-css">
-        <link  href="/css/style.css"  type="text/css"  rel="stylesheet"/>
+        <link  href="/css/main.css"  type="text/css"  rel="stylesheet"/>
+        <link  href="/css/chat.css"  type="text/css"  rel="stylesheet"/>
     </head>
 <body>
     <div  class="title">WebChat</div>
-</div>
-<input id='username' placeholder="Anonymous"  />
 
-    <ul id="messages"  class="messages"></ul>
-<div  class="bottom_wrapper clearfix">
+<div id="username_input">
+    <p>Please, type your username!</p>
+    <input id='username' placeholder="Anonymous"  />
+</div>
+<div class="chat_window">
+    <ul id="messages"  class="messages"> </ul>
+    <div class="typing_container"> <i id="typing"></i> </div>
 
-<i  id="typing"></i>
-    <form  id="form">
-        <div  class="message_input_wrapper">
-        <input  id="message_input"  class="message_input"  placeholder="Type your message here..."  />
-        </div>
-        <button  class="send_message">Send</button>
-    </form>
+
+    <div id="bottom-chat">
+        <form  id="form">
+            <div  class="message_input_wrapper">
+            <input  id="message_input"  class="message_input"  placeholder="Type your message here..."  />
+            <button  class="send_message">Send</button>
+            </div>
+        </form>
+    </div>
 </div>
-</div>
+
 <script src="/socket.io/socket.io.js"></script>
 <script  src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script  src="/js/chat.js"></script>
