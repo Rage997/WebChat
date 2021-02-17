@@ -1,8 +1,6 @@
 # WebChat application
 > A chat based on node.js, socket.io and mongodb.
 
-# Requirements
-
 node.js and mongoDB
 # Installation
 
